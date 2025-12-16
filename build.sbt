@@ -3,7 +3,7 @@ import ZioEcosystemProjectPlugin.autoImport._
 ThisBuild / version       := "0.11.0"
 ThisBuild / versionScheme := Some("early-semver")
 ThisBuild / organization  := "br.com.caju"
-ThisBuild / description   := "Provides ZIO ZLayer wrappers around Scala Testcontainers (Caju fork with macOS fixes)"
+ThisBuild / description   := "Provides ZIO ZLayer wrappers around Scala Testcontainers (Caju fork)"
 ThisBuild / homepage      := Some(url("https://github.com/caju-beneficios/testcontainers-for-zio"))
 ThisBuild / startYear     := Some(2021)
 ThisBuild / licenses      := List("Apache-2.0" -> new URL("http://www.apache.org/licenses/LICENSE-2.0.txt"))
