@@ -1,4 +1,5 @@
-addSbtPlugin("com.github.sbt"                    % "sbt-pgp"                   % "2.1.2")
+addSbtPlugin("com.codecommit"                    % "sbt-github-packages"       % "0.5.3")
+addSbtPlugin("au.com.onegeek"                   %% "sbt-dotenv"                % "2.1.146")
 addSbtPlugin("ch.epfl.scala"                     % "sbt-bloop"                 % "1.4.9")
 addSbtPlugin("ch.epfl.scala"                     % "sbt-scalafix"              % "0.10.1")
 addSbtPlugin("com.eed3si9n"                      % "sbt-buildinfo"             % "0.10.0")

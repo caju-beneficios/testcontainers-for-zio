@@ -54,7 +54,10 @@ object ZPostgreSQLContainer {
             container.username,
             container.password
           )
-        }.orDie
+        }.retry(
+          // Retry with exponential backoff to handle PostgreSQL initialization delays
+          Schedule.exponential(500.millis, 1.5) && Schedule.recurs(20)
+        ).orDie
       )(conn =>
         ZIO
           .attempt(conn.close())

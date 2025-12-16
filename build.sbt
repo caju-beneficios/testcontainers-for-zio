@@ -1,26 +1,15 @@
 import ZioEcosystemProjectPlugin.autoImport._
+import sbtghpackages.GitHubPackagesPlugin.autoImport._
 
-ThisBuild / version       := "0.10.0"
+ThisBuild / scalaVersion  := "2.13.8"
+ThisBuild / version       := "0.11.0"
 ThisBuild / versionScheme := Some("early-semver")
-ThisBuild / organization  := "io.github.scottweaver"
-ThisBuild / description   := "Provides ZIO ZLayer wrappers around Scala Testcontainers"
-ThisBuild / homepage      := Some(url("https://github.com/scottweaver/testcontainers-for-zio"))
-ThisBuild / startYear     := Some(2021)
-ThisBuild / licenses      := List("Apache-2.0" -> new URL("http://www.apache.org/licenses/LICENSE-2.0.txt"))
-ThisBuild / scmInfo := Some(
-  ScmInfo(
-    url("https://github.com/scottweaver/testcontainers-for-zio"),
-    "scm:git@github.com:scottweaver/testcontainers-for-zio.git"
-  )
-)
-ThisBuild / developers := List(
-  Developer(
-    id = "scottweaver",
-    name = "Scott T Weaver",
-    email = "scott.t.weaver@gmail.com",
-    url = url("https://scottweaver.github.io/")
-  )
-)
+ThisBuild / organization  := "br.com.caju"
+ThisBuild / organizationName := "Caju Benefícios"
+
+GithubPackages.tokenResolutionSource
+ThisBuild / githubOwner := "caju-beneficios"
+ThisBuild / githubRepository := "testcontainers-for-zio"
 
 lazy val root = project
   .in(file("."))
@@ -296,16 +285,7 @@ def testcontainersScalaSettings =
     )
   ) ++ publishSettings
 
-lazy val publishSettings =
-  Seq(
-    pomIncludeRepository := { _ => false },
-    publishTo := {
-      val nexus = "https://s01.oss.sonatype.org/"
-      if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/snapshots")
-      else Some("releases" at nexus + "service/local/staging/deploy/maven2")
-    },
-    publishMavenStyle := true
-  )
+lazy val publishSettings = Seq.empty[Setting[_]]
 
 lazy val docs = project
   .in(file("docs-project"))
