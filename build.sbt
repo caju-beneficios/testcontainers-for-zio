@@ -2,7 +2,7 @@ import ZioEcosystemProjectPlugin.autoImport._
 import sbtghpackages.GitHubPackagesPlugin.autoImport._
 
 ThisBuild / scalaVersion  := "2.13.8"
-ThisBuild / version       := "0.11.0"
+ThisBuild / version       := "0.11.1"
 ThisBuild / versionScheme := Some("early-semver")
 ThisBuild / organization  := "br.com.caju"
 ThisBuild / organizationName := "Caju Benefícios"
